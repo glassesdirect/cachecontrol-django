@@ -15,7 +15,8 @@ install:
 - pip install pipenv
 - pipenv install --dev
 script:
-- if [[ $TRAVIS_PYTHON_VERSION == '3.6' ]]; then pipenv install --pre black && pipenv run black --check .; fi
+- if [[ $TRAVIS_PYTHON_VERSION == '3.6' ]]; then pipenv install --pre black && pipenv
+  run black --check .; fi
 - pipenv run isort --check-only
 - find . -iname "*.py" | xargs pipenv run pylint
 - pipenv run pytest --cov=cachecontrol_django --cov-report=xml
@@ -23,7 +24,7 @@ deploy:
   provider: pypi
   user: craiga
   password:
-    secure: rPszZ864doyaNOcUPUISBlfKIx6+k7PGzrRU3llqYBxlzVMa/T4y15kV4imO0oWh7kLhNZgy8paxQfM+UsbSHWOUv70fCkDDYIWgn+EDrQZtbr+YS8Xuc2buzRfRYa+F222gat5DuyDY9bhdRvB7v+BvE4YyHJAYmwXfVfIMOnhuIBkdHqAfQnMk3dN7eZd6DLxxIV3yDE0MD+ltDSLJwxYfZoze4jZNsssccve1l82by8u/qwasmEZMNl6Fy34RPY/1dXccNSdlxiWrv72Sxnu0w198+GnEa/EwXmHn+bq9Epd0LabURmGNDCINdjVvqm9zLiVGECpz4h95KnoNVZ0BOKMOZRzVuYPPrbFikO0e5BrgJ8V3amQkeYSVxVsRpGKqU0cAHa3EwLmL0a3J6astm1KtkckE50lp/ak/luoU2kVo39Nm3/RZkVLNoaJxORbNHtWWBD7qsADjL79CuRrk8NDdZCsIA5aXIP4RGYCb9YltBtFyfQQ7hobd9cVOnbWlIQfVRRjVt0colhAqOPm2k2Vh/tT0Ik+dSqlMSDV/wjvSFpJG09zXx9CL/LsVCD093uf/CZbnc/zWYOYxiqeuMGABjl5cgYFY6SxAzOPv1luGLAqasNn9tB9LNHFfJv8js86lL7ibtMTZ+6362C0sTrZThkFh45c0bV5Vd4o=
+    secure: UFSnvrsOFhB3yaL/sRXCSknRf943usnkwvhY9SeZDG6HdLBhLKzvYyokeFQCx1xct8A+e8jGLen+k5S8wdu6Q6n0mHXBkBXh7yHZR0Fku19nMP7nicbTz1UGsh0ZBe5YzH7aj/Hot4YcMtsaQurHOPakiFPptHyCdEtRzvcTx6qJaFOth3i0YhODgCejwwDPAKPh+0FVIlA8/6F71Dt0aZHzAdU8YOtsVHzwxBhMvugkIhjq6Fu2pt5PhWly02xiyzM9iyPQm/7cNRYFb5i1Dhb1ZOu99j3/Idu2dv0O26ti8D+sFfqhvKh00/sVeacr3RjRp8XnMzCn0iB24AO8GMwHt9JDQFjc1CJX42F2bz2vlLHJXZo1WtHbELGFNYm++qajUqGNiZznkBe8SegAKc05j9EEMjgsicSAV8yXSwxu9ATQEhCTkRFflgKUv+RItFFmrjpYa+4ML+xa6vj5mg0GGOdENcPVNe2B3ThvjyEt8sUOZG96Dg3BX0/eXL/0OBw7+DidkD7QThcI2u/TeiQW5waEAZPbO10F3+MBXwAThCDlHQcpY/wlNdygQS0u99iXzc8IzmohwawSGSOjsgdJMyAi7Jaw6W5Atg1g6WjOOZlE5/vwUcbcKi95sgPScXbpkc87v5R3i3SxIqhR5Fzv5HCsUrqZJsU5CHQcfoI=
   skip_existing: true
   on:
     tags: true
