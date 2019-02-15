@@ -1,0 +1,5 @@
+[MASTER]
+load-plugins = pylint.extensions.mccabe, pylint.extensions.bad_builtin
+
+[REPORTS]
+output-format = colorized
