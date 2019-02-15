@@ -5,7 +5,7 @@ import setuptools
 try:
     with open("README.markdown", "r") as fh:
         long_description = fh.read()  # pylint: disable=invalid-name
-except FileNotFoundError:
+except IOError:
     # pylint: disable=invalid-name
     long_description = (
         "A cache provider for "

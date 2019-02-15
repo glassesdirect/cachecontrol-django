@@ -7,7 +7,7 @@ verify_ssl = true
 isort = "*"
 pylint = "*"
 coverage = "*"
-pytest = "*"
+pytest = "< 5"  # for Python 2 support.
 pytest-mock = "*"
 pytest-cov = "*"
 
