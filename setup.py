@@ -15,7 +15,7 @@ except IOError:
 
 setuptools.setup(
     name="cachecontrol-django",
-    version="0.0.0",
+    version="1.0.dev0",
     author="MyOptique Group",
     author_email="tech@myoptiquegroup.com",
     description=__doc__,
